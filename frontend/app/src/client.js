@@ -17,7 +17,7 @@ export const client = {
 
     // If the path of the URL starts with /CSPT, we will trigger a toast message
     let method = options.method ? options.method : "GET";
-    if (URL.parse(url).pathname === `/CSPT`) {
+    if ( (new URL(url)).pathname === `/CSPT`) {
       if (method === "GET") {
         toast.info(`You hit the /CSPT endpoint with the ${method} method. Can you escalate the impact?`);
       } else {
